@@ -1,0 +1,26 @@
+# LMKD (low memory killer daemon) tuning for a 4 GB device.
+# These are the AOSP-documented LOW-RAM reference values, applied WITHOUT setting
+# ro.config.low_ram (which would broadly change system behaviour). We keep the
+# modern PSI-based killer and only feed it the low-RAM thresholds, i.e. we do NOT
+# fight the newer model by forcing legacy minfree_levels.
+# The module system applies system.prop via resetprop at post-fs-data, before
+# lmkd (class main) starts, so lmkd reads these at launch.
+# Source: https://source.android.com/docs/core/perf/lmkd
+
+# Keep PSI monitors (default true). Explicit for clarity.
+ro.lmk.use_psi=true
+# Do NOT use the legacy free-memory/file-cache minfree strategy.
+ro.lmk.use_minfree_levels=false
+# Consider swap "starved" at 10% free (low-RAM default; HP default is 20).
+ro.lmk.swap_free_low_percentage=10
+# Thrashing threshold: low-RAM default 30 (HP default 100). Lower = react to
+# pagecache refault thrashing sooner, which protects a slow-storage 4 GB device.
+ro.lmk.thrashing_limit=30
+# Thrashing decay: low-RAM default 50 (HP default 10).
+ro.lmk.thrashing_limit_decay=50
+# Partial PSI stall before a low-memory notification: low-RAM default 200ms
+# (HP default 70ms). Higher = fewer premature kills on a device that is
+# expected to sit under some memory pressure.
+ro.lmk.psi_partial_stall_ms=200
+# Complete PSI stall before a critical notification (AOSP default 700ms).
+ro.lmk.psi_complete_stall_ms=700

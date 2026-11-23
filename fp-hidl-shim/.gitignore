@@ -1,0 +1,3 @@
+# raw device blobs pulled from the phone stay OUT of git (device-identifying)
+files/*.so
+*.log

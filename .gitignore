@@ -1,0 +1,15 @@
+# never commit device blobs or secrets
+*.img
+*.bin
+*.elf
+backup/
+device/
+kernel-flash/
+# proprietary vendor binaries pulled from a device
+fp-hidl-shim/files/*.so
+volte/module/
+**/*.apk
+**/*.jar
+# the fingerprint module's prebuilt zip embeds a vendor .so — never ship it
+fp-hidl-shim/*.zip
+*.log

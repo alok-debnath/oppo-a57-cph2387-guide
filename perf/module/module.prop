@@ -1,0 +1,6 @@
+id=a57_lowram_perf
+name=A57 Low-RAM Performance Tuner
+version=v0.2
+versionCode=2
+author=Alok Debnath
+description=Conservative, reversible runtime perf tuning for Oppo A57 (CPH2387, MT6765/Helio G35, 4GB RAM) on an A16 GSI. zstd ZRAM ~2GB, zram-aware swappiness, PSI-based LMKD low-RAM props, flash-friendly vm dirty ratios, schedutil CPU governor, deep CPU idle + GPU idle-scaling (battery, no perf cap). Idempotent, fully guarded, removable in one tap.

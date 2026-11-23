@@ -1,0 +1,6 @@
+id=fp_hidl_shim
+name=Oplus Biometrics HIDL Descriptor Shim
+version=v0.1
+versionCode=1
+author=Alok Debnath
+description=Bind-mounts descriptor-patched oplus biometrics interface libraries so an AOSP GSI can bind the fingerprint (and face) HAL. WIP: requires the patched .so to be supplied in files/ before it does anything (inert no-op otherwise).
