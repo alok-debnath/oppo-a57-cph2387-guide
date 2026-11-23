@@ -24,8 +24,7 @@ stock Android 13 / ColorOS 13.1, kernel 4.19.191+).
 | [`volte/`](volte/) | VoLTE/IMS method notes (which files to pull from your own stock ROM) |
 
 The matching kernel build (KernelSU-Next on 4.19, GitHub Actions CI) lives in a
-separate repo: **oppo-a57-mt6765-kernel**. A prebuilt, flashable
-KernelSU-Next kernel is on its [Releases page](https://github.com/alok-debnath/oppo-a57-mt6765-kernel/releases/tag/v1.0-ksu).
+separate repo: **oppo-a57-mt6765-kernel**.
 
 ## The short version of the flow
 
